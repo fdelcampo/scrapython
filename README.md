@@ -1,4 +1,4 @@
 scrapython
 ==========
 
-Ejercicio de explicación Scrap para Scrapathon INRIA Chile - DataTuesday - OpenData
+Ejercicio de explicación Scrapy para Scrapathon INRIA Chile - DataTuesday - OpenData
