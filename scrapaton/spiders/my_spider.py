@@ -36,12 +36,12 @@ class MySpider(BaseSpider):
         self.log('parse_presidente url: <%s>' % response.url)
         hxs = HtmlXPathSelector(response)
         presi = Presidente()
-        presi['foto'] = [foto for foto in hxs.select('/html/body//table[@class="infobox_v2"]//tr/td/a/img/@src').re('//(.*)')]
+        presi['foto'] = hxs.select('/html/body//table[@class="infobox_v2"]//tr/td/a/img/@src').re('//(.*)')
         nom = hxs.select('/html/body//table[@class="infobox_v2"]//tr[1]/th/span/text()')
-        nom_text = nom.extract()[0]
-        self.log('sin utf-8 %s' % nom_text)
-        self.log('utf-8 %s' % nom_text.encode('utf-8'))
-        presi['nombre'] = nom_text.encode('utf-8')
+        nom_text = nom.extract()
+        #self.log('sin utf-8 %s' % nom_text)
+        #self.log('utf-8 %s' % nom_text.encode('utf-8'))
+        presi['nombre'] = nom_text
         return presi
         
         
