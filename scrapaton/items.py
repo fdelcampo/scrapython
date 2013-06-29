@@ -22,3 +22,14 @@ class ScrapatonUrl(Item):
 class Presidente(Item):
     nombre = Field()
     foto = Field()
+    pass
+
+
+class Event(Item):
+    start = Field()
+    end = Field()
+    title = Field()
+    description = Field()
+    image = Field()
+    link = Field()
+    pass
